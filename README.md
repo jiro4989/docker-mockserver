@@ -4,8 +4,8 @@
 ## 前提条件
 下記のツールが必要です。
 
-- docker-compose
-- dep
+- [docker-compose](https://docs.docker.com/compose/install/)
+- [dep](https://github.com/golang/dep)
 
 ## 使い方
 下記のコマンドを実行してリポジトリを整える。
