@@ -52,6 +52,9 @@ func main() {
 		switch m {
 		case "get":
 			router.GET(url, func(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+				extIdx := strings.LastIndex(fp, ".")
+				ext := fp[extIdx+1:]
+				w.Header().Set("Content-Type", "application/"+ext+"; charset=UTF-8")
 				b, err := ioutil.ReadFile(fp)
 				if err != nil {
 					log.Fatal(err)
@@ -60,6 +63,9 @@ func main() {
 			})
 		case "post":
 			router.POST(url, func(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+				extIdx := strings.LastIndex(fp, ".")
+				ext := fp[extIdx+1:]
+				w.Header().Set("Content-Type", "application/"+ext+"; charset=UTF-8")
 				b, err := ioutil.ReadFile(fp)
 				if err != nil {
 					log.Fatal(err)
