@@ -8,6 +8,7 @@
 - [dep](https://github.com/golang/dep)
 
 ## 使い方
+### サーバの起動
 下記のコマンドを実行してリポジトリを整える。
 
 ```bash
@@ -57,6 +58,8 @@ cd /go/src/mock
 go run cmd/main.go
 ```
 
+### APIの動作確認
+#### CLI
 別で端末を起動して、下記のコマンドを実行する。
 
 ```bash
@@ -64,4 +67,18 @@ curl 172.17.0.1:8088/get/user.json
 ```
 
 jsonが返ってきたら成功です。
+
+#### ブラウザ
+下記のURLにアクセスします。
+
+- http://172.17.0.1:8088/get/user.json
+- http://172.17.0.1:8088/post/user.json
+- http://172.17.0.1:8088/get/address.json
+- http://172.17.0.1:8088/get/address.xml
+
+## APIを追加する
+respディレクトリ配下にjsonやxmlファイルを追加します。
+
+config.tomlにapiを追加して、urlに配置したファイルのパスを記述します。記述する際
+はrespを省いてパスを記述します。
 
