@@ -1,11 +1,25 @@
 # docker-mockserver
 単一のJSONを返すモックサーバをdocker上で起動するテスト
 
+## 前提条件
+下記のツールが必要です。
+
+- docker-compose
+- dep
+
 ## 使い方
-下記のコマンドを実行してディレクトリ構造を確認する。
+下記のコマンドを実行してリポジトリを整える。
 
 ```bash
-$ ls -lah
+git clone https://github.com/jiro4989/docker-mockserver.git
+cd docker-mockserver
+dep ensure
+ls -lah
+```
+
+下記と同様のファイル構造であることを確認する。
+
+```bash
 合計 40K
 drwxr-xr-x  5 jiro jiro 4.0K  4月 14 11:46 .
 drwxr-xr-x 14 jiro jiro 4.0K  4月 14 08:01 ..
