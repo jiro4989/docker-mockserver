@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  api_server:
+    image: golang
+    container_name: mock
+    ports:
+      - "8088:80"
+    tty: true
+    volumes:
+      - .:/go/src/mock
+    entrypoint:
+      - tail
+      - -f
+      - /dev/null
